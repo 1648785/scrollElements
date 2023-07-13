@@ -3,38 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>页面滚动元素两边出现</title>
+		<link rel="stylesheet" href="style.css">
 	</head>
-	<style>
-		body {
-			margin: 0 auto;
-			background-color: rgb(235,235,235);
-			overflow-x: hidden;
-		}
-		
-		.container {
-			width: 800px;
-			height: 200px;
-			line-height: 200px;
-			margin: 0 auto;
-			margin-bottom: 10px;
-			background-color: skyblue;
-			text-align: center;
-			border-radius: 20px;
-			transition: all 1s;
-		}
-		
-		.container:nth-child(odd)  {
-			transform: translateX(-200%);
-		}
-		
-		.container:nth-child(even)  {
-			transform: translateX(200%);
-		}
-		
-		.container.show {
-			transform: translateX(0);
-		}
-	</style>
 	<body>
 		<div class="container">1</div>
 		<div class="container">2</div>
@@ -51,22 +21,6 @@
 		<div class="container">13</div>
 		<div class="container">14</div>
 		<div class="container">15</div>
-		<script>
-			const containers = document.querySelectorAll('.container')
-			const clientHeight = window.innerHeight * 0.8
-			init()
-			window.addEventListener('scroll',init)
-			function init(){
-				containers.forEach(container => {
-					containerToTop = container.getBoundingClientRect().top
-					console.log(containerToTop);
-					if(containerToTop <= clientHeight){
-						container.classList.add('show')
-					}else{
-						container.classList.remove('show')
-					}
-				})
-			}
-		</script>
+		<script src="index.js"></script>
 	</body>
 </html>

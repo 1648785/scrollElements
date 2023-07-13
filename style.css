@@ -1,0 +1,29 @@
+body {
+			margin: 0 auto;
+			background-color: rgb(235,235,235);
+			overflow-x: hidden;
+		}
+		
+		.container {
+			width: 800px;
+			height: 200px;
+			line-height: 200px;
+			margin: 0 auto;
+			margin-bottom: 10px;
+			background-color: skyblue;
+			text-align: center;
+			border-radius: 20px;
+			transition: all 1s;
+		}
+		
+		.container:nth-child(odd)  {
+			transform: translateX(-200%);
+		}
+		
+		.container:nth-child(even)  {
+			transform: translateX(200%);
+		}
+		
+		.container.show {
+			transform: translateX(0);
+		}
